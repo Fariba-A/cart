@@ -1,0 +1,20 @@
+
+.custom-captcha,
+.custom-captcha-image img,
+.custom-captcha input{
+      width: 100%;
+}
+
+
+.custom-captcha{
+  
+    .custom-captcha-image{
+        display: flex;
+        gap: 1em;
+  
+    }
+   p{
+    font-size: 0.8em;
+    color: #4b4b4b;
+   }
+}

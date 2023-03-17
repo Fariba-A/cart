@@ -1,0 +1,85 @@
+.three-columns-boxe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 1em;
+}
+// ---
+.grid--items {
+
+    background-color: var(--white);
+    padding: 1em;
+    box-shadow: 1px 1px 12px 1px rgb(0 0 0 / 10%);
+    border-radius: var(--borderRadius);
+
+    ul {
+
+         display: grid;
+         grid-template-columns: 160px repeat(auto-fit, minmax(3em, 1fr));
+         align-items: center;
+         padding: 1.5em 2em;
+         gap: 0.5em;
+
+
+         &.head-grid--items {
+              font-weight: 600;
+              background-color: var(--tableHeadColor);
+              border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+         }
+
+         li {
+              text-align: center;
+         }
+    }
+
+
+    .body-grid--items {
+         font-size: var(--size09);
+
+         &:not(:last-of-type) {
+              border-bottom: 1px dashed var(--lightGray);
+         }
+
+
+
+
+         a {
+              font-weight: 600;
+              display: flex;
+         }
+
+
+
+
+         .delete {
+
+              img {
+                   width: 2em;
+
+              }
+         }
+    }
+
+
+}
+// ---
+.card-grid-item {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+     gap: 1em;
+     @media (max-width:698px) and (min-width:480px){
+ 
+         .card{
+             width: min-content;
+             margin: auto;
+             img{
+                 width: auto;
+             }
+         }
+         
+     }
+     @include media($mobile){
+         gap: 0em ;
+     }
+ }
+ 

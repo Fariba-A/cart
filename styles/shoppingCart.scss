@@ -1,280 +1,528 @@
-@import "../components/asidecart";
-
+@import '../components/variables';
+@import '../components/gridItems';
 
 // --start/sideBar
 p {
     font-size: 0.9em;
 }
 
-.payment-way,
-.payment-way div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.validation {
+    // padding: 2em;
+    color: var(--redColor);
+    display: block;
+    font-size: 0.9em;
+
 }
 
+
+
+// --start/payment method
 .payment-way {
-
-
-
-
-
-    label {
-        font-size: 0.8em;
-     width: 100%;
-        position: relative;
-        margin-top: 1.5em;
-
-        input {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-
-            &:checked~span.checkmark {
-                background-color: var(--blue);
-            }
-
-            &:checked~span.checkmark::after {
-                display: block;
-                border-color: var(--blue);
-                background-color: var(--white);
-            }
-        }
-
-        span.checkmark {
-            position: absolute;
-            top: 0;
-            border-radius: 50%;
-            border: 1px solid var(--lightGray);
-            width: 1.1em;
-            height: 1.1em;
-            cursor: pointer;
-            margin-right: 0.2em;
-            &::after {
-                position: absolute;
-                content: '';
-                background-color: var(--white);
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                width: 0.4em;
-                height: 0.4em;
-                border-radius: 50%;
-                border: 1px solid #ccc;
-                background-color: transparent;
-            }
-        }
+    p {
+        font-size: 1.1em;
+        color: var(--textColorStrong);
+        font-weight: 600;
+        border-bottom: 1px solid var(--hrColor);
+        border-radius: 0;
+        margin-bottom: 1em;
+        padding-bottom: 0.5em;
     }
 
+    label {
+        display: block;
+        font-weight: 500;
+        font-size: 0.9em;
+        color: var(--textColorFade);
+
+        &:nth-of-type(1) {
+            margin-bottom: 1em;
+        }
+
+        input {
+            margin-left: 2em;
+            position: relative;
+
+            &::after {
+                content: '\f555';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 800;
+                position: absolute;
+                right: calc(100% + 0.8em);
+                color: var(--textSecondColor);
+                font-size: 1.3em;
+                width: 0;
+                display: flex;
+                justify-content: center;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                height: 0;
+                align-items: center;
+            }
+
+        }
+
+        &:nth-child(2) input::after {
+            content: '\f09d';
+            font-weight: 400;
+        }
+    }
 }
 
+// --end/payment method
+// --start/payment .payment-off,
 .payment {
     div {
         display: flex;
         justify-content: space-between;
+        font-weight: 500;
+        color: var(--textColorFade);
+
+        &:nth-of-type(2) {
+            margin: 1.1em 0;
+            color: var(--alertColor);
+        }
+
+        &:nth-of-type(3) {
+            font-weight: 600;
+            color: var(--textColorStrong);
+            text-align: center;
+            padding-top: 1em;
+            margin-bottom: 1.5em;
+        }
+    }
+
+    // --start/payment button 
+    #btn-payment {
+        color: #fff;
+        background-color: var(--buttonColor);
+        border: none;
+        border-radius: var(--borderRadius);
+        font-size: 1em;
+        text-align: center;
+        width: 100%;
+        padding: 0.5em;
+        transition: 0.3s opacity, .1s background-color;
+        margin-bottom: 1.5em;
+
+        &:hover {
+            background-color: #1b66a8;
+        }
+
+        &[disabled] {
+            opacity: 40%;
+            cursor: auto;
+        }
     }
 }
 
+// --end/payment button 
+
+// --end/payment
 // --end/sideBar
+
+
+// --satrt/courses
 .shoppingCart {
+
+
+    .resItem--course,
+    .resCoursePrice-final,
+    .payment-off span:first-child {
+        display: none;
+    }
+
+    .payment-off span#payment-off {
+        display: block;
+    }
+
     input {
-        border: 1px dashed var(--lightGray);
+
         height: 3em;
     }
 
-    .custom-captcha {
-        p {
-            margin: 1em 0;
+
+    ul {
+        li {
+            &:nth-child(4) {
+                color: var(--redColor);
+            }
         }
     }
-
-    .basket-items,
-    .basket-items .head-basket-items {
-        border-radius: 8px;
-    }
-
-    .basket-items {
-
-        background-color: var(--white);
-        padding: 2em;
-
-        ul {
-
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            padding: 2em;
-
-            &:not(:last-child) {
-                border-bottom: 1px dashed var(--lightGray);
-            }
-
-            &.heade-basket-items {
-                font-weight: 600;
-                background-color: var(---white);
-                padding: 1.5em 2em;
-
-            }
-
-            &.remove {
-                display: none;
-            }
-
-            &.body-basket-items {
-                li {
-                    font-size: 0.8em;
-
-                    a {
-                        display: block;
-                        font-weight: 400;
-                    }
-
-                }
-
-                .close {
-
-                    img {
-                        width: 2em;
-
-                    }
-                }
-            }
-
-        }
-    }
-
 
     // --start/basket items
+    // -------
+    .body-grid--items {
+        position: relative;
+        counter-increment: css-counter 1;
+        place-items: center;
+        border-top: none;
+        overflow: hidden;
+
+        &::before {
+            position: absolute;
+            content: counter(css-counter);
+            cursor: default;
+            background-color: #fff;
+            right: 2.3em;
+            top: 50%;
+            transform: translate(50%, -50%);
+            border-radius: 50%;
+
+            width: 2em;
+            height: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .title-course-basket-items {
+            p {
+                font-size: 0.9em;
+                margin-top: 1em;
+            }
+
+            &:first-child {
+                display: block;
+
+                img {
+                    width: 5em;
+                    height: 5em;
+                    border-radius: 5px;
+                    margin-left: 1em;
+                }
+            }
+        }
+
+    }
+
+
+
+    .product-count {
+        width: 100%;
+
+        >ul {
+            border: 1px solid #ccc;
+            width: 100%;
+            border-radius: 30px !important;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 2em;
+            align-items: center;
+            padding: 0;
+            place-items: normal;
+            gap: 0;
+            overflow: hidden;
+
+            li {
+
+
+                &:nth-of-type(2) {
+                    border-left: 1px solid #ccc;
+                    border-right: 1px solid #ccc;
+                }
+
+
+
+
+                button {
+                    border: none;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                    border-radius: 0;
+                    font-size: 1.3em;
+                    transition: 0.3s;
+
+
+
+
+                    &:hover {
+                        background-color: #ccc;
+                    }
+                }
+
+                span {
+
+                    margin: auto;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto;
+                }
+            }
+
+        }
+
+
+    }
+
+    ul {
+
+        li {
+            font-size: 1em;
+        }
+    }
+
+}
+
+// --satrt/courses
+
+.emptyShoppingCart {
+    display: none;
+    background-color: #fff;
+    padding: 2em;
+
+    div {
+
+        background-color: #f5f5f5;
+        text-align: center;
+        font-size: 1em;
+        padding: 1.5em;
+        padding: 2em;
+        margin: auto;
+
+        img {
+            max-width: 15em;
+
+        }
+
+        p {
+            font-size: 2.5em;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+}
+
+
+.modalSuccess {
+
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        animation: 2s;
+        transform: scale(1) translate(50%, -50%);
+    }
+
+    visibility: hidden;
+    opacity: 0;
+    transition:transform 0.3s,
+    opacity 0.3s;
+    background-color: #fff;
+    width: 15em;
+    height: auto;
+    text-align: center;
+    padding: 1em;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    transform:scale(0.8) translate(50%, -50%);
+    box-shadow: 0px 0px 12px 6px #00000030;
+    animation-delay: 0.5s;
+    z-index: 3;
+
+    p {
+        text-align: center;
+        margin-bottom: 1em;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(-10px);
+        animation: remove-offset forwards 0.3s;
+    }
+
+    svg {
+        display: block;
+        width: 15em;
+        min-height: 5em;
+
+        g {
+
+            &.active {
+
+
+                circle,
+                path {
+                    color: #63c588;
+                    stroke-dasharray: 1;
+                    stroke-dashoffset: 1;
+                    animation: remove-offset forwards 0.5s;
+                }
+            }
+
+        }
+
+
+
+
+        @keyframes remove-offset {
+            to {
+                stroke-dashoffset: 0;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+    }
+
+
 
 
 }
 
-.modalRemove {
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 20em;
-    height: 15em;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    padding: 1em;
 
-    p {
-        font-weight: 600;
-        color: var(--white);
-        margin-left: 2em;
+
+@include media($screen) {
+    .shoppingCart {
+
+        .resItem--course,
+        .resCoursePrice-final,
+        .payment-off span:first-child {
+            display: contents;
+        }
+
+        .delete {
+            margin-right: auto;
+        }
+
+        .basket-items {
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+            gap: 1em;
+
+        }
+
+        .grid--items {
+            line-height: 2em;
+            padding: 0;
+            background-color: transparent;
+            box-shadow: none;
+
+            .grid--items ul {
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+            }
+
+            ul.head-grid--items {
+                display: none;
+            }
+
+            ul.body-basket-items {
+                border: none;
+                grid-template-rows: repeat(auto-fit, 1fr);
+                grid-template-columns: auto !important;
+                padding: 1em 2.5em;
+                gap: 0.5em;
+                box-shadow: 0px 0px 11px 0px #0000001f;
+                border-radius: 8px;
+                background-color: #fff;
+                place-items: inherit;
+
+                &::before {
+                    display: none;
+
+                }
+
+                li {
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+
+                    span {
+                        &.orginalPrice-beforeOff {
+                            position: relative;
+                            width: fit-content;
+                            margin-left: 0.5em;
+
+                            &::after {
+                                position: absolute;
+                                content: '';
+                                width: 100%;
+                                height: 1px;
+                                background-color: #727272;
+                                left: 0;
+                                right: 0;
+                                top: 50%;
+                            }
+                        }
+
+                        &.resCoursePrice-final {
+                            display: block;
+                            color: #000;
+                            font-size: 1.2em;
+                            margin-right: 1em;
+                        }
+                    }
+
+
+
+
+                }
+
+
+                .coursePrice-final {
+                    display: none;
+                }
+            }
+        }
 
     }
 
 
-    .animation-ctn {
-        text-align: center;
-        margin-top: 5em;
-
-        .icon--order-success {
 
 
-            font-size: 0.5em;
-        }
+
+
+    .product-count {
+        margin-top: 0.5em;
+        width: 10em !important;
     }
 
-    @-webkit-keyframes checkmark {
-        0% {
-            stroke-dashoffset: 100px
+}
+
+
+
+@include media($mobile) {
+
+    .shoppingCart {
+        font-size: 0.8em;
+
+        .basket-items {
+            grid-template-columns: repeat(auto-fit, 100%);
         }
 
-        100% {
-            stroke-dashoffset: 200px
+        .grid--items {
+            gap: 0.5em 0;
+            padding: 0;
+
+            ul.body-basket-items {
+                padding: 1em;
+
+
+
+                li span.resCoursePrice-final {
+                    margin-right: inherit !important;
+                }
+            }
         }
+
+
     }
 
-    @-ms-keyframes checkmark {
-        0% {
-            stroke-dashoffset: 100px
-        }
 
-        100% {
-            stroke-dashoffset: 200px
+    .emptyShoppingCart{
+        font-size: 0.8em;
+       div{
+        p{
+            font-size:1em;
         }
+       }
     }
-
-    @keyframes checkmark {
-        0% {
-            stroke-dashoffset: 100px
-        }
-
-        100% {
-            stroke-dashoffset: 0px
-        }
-    }
-
-    @-webkit-keyframes checkmark-circle {
-        0% {
-            stroke-dashoffset: 480px
-        }
-
-        100% {
-            stroke-dashoffset: 960px;
-
-        }
-    }
-
-    @-ms-keyframes checkmark-circle {
-        0% {
-            stroke-dashoffset: 240px
-        }
-
-        100% {
-            stroke-dashoffset: 480px
-        }
-    }
-
-    @keyframes checkmark-circle {
-        0% {
-            stroke-dashoffset: 480px
-        }
-
-        100% {
-            stroke-dashoffset: 960px
-        }
-    }
-
-    @keyframes colored-circle {
-        0% {
-            opacity: 0
-        }
-
-        100% {
-            opacity: 100
-        }
-    }
-
-    /* other styles */
-    /* .svg svg {
-          display: none
-      }
-       */
-    .inlinesvg .svg svg {
-        display: inline
-    }
-
-    /* .svg img {
-          display: none
-      } */
-
-    .icon--order-success svg polyline {
-        -webkit-animation: checkmark 0.25s ease-in-out 0.7s backwards;
-        animation: checkmark 0.25s ease-in-out 0.7s backwards
-    }
-
-    .icon--order-success svg circle {
-        -webkit-animation: checkmark-circle 0.6s ease-in-out backwards;
-        animation: checkmark-circle 0.6s ease-in-out backwards;
-    }
-
-    .icon--order-success svg circle#colored {
-        -webkit-animation: colored-circle 0.6s ease-in-out 0.7s backwards;
-        animation: colored-circle 0.6s ease-in-out 0.7s backwards;
-    }
-
 }

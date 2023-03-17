@@ -12,128 +12,170 @@
 
 <body>
   <main>
-    <div class="innerPage-addNew">
-      <section class="shoppingCart mainContent-twoParts">
-        <aside>
-    <form action="">      <div class="sidebarContent">
-      <div class="input-layer ">
-        <button type="submit">ثبت</button>
-        <input type="text" placeholder="افزودن کد تخفیف">
+    <div class="emptyShoppingCart">
+      <div>
 
-      </div>
-
-    </div>
-    <div class="sidebarContent">
-      <div class="custom-captcha">
-        <div class="custom-captcha-image">
-          <img src="/public//Content/images/img/download.png" alt="">
-          <i class="fas fa-sync-alt"></i>
-        </div>
-        <p>لطفا متن داخل تصویر را وارد کنید.</p>
-        <input type="text">
+        <img src="/public/Content/images/img/Basket-PNG-File.png" alt="" srcset="">
+        <p>سبد خرید شما خالی است!</p>
       </div>
     </div>
-    <div class="sidebarContent">
-      <p>انتخاب درگاه</p>
-      <div class="payment-way">
 
-      
-          <label for="onlinePay">درگاه پرداخت آنلاین
-          <input type="radio" id="onlinePay" name="paymentWay" checked="checked">
-        <span class="checkmark"></span>
-      </label>
-
-          <label for="walletPay">کیف پول<span>(موجودی 100،000 تومان)</span>
-          <input type="radio" id="walletPay" name="paymentWay" checked="">
-          <span class="checkmark"></span>
-          </label>
-      </div>
-    </div>
-    <div class="sidebarContent payment">
-      <div>مبلغ کل: <span>100,000 تومان</span></div>
-      <div class="payment-off">تخفیف <span>10,000 تومان</span></div>
-    </div>
-  </form>
-        </aside>
-        <!-- <ul class="basket-items">
-
-          <li class="basket-item bg-white">
-            <a href="">دوره آموزش طراحی سایت</a>
-            <div class="info-basket-items">
-              <span class="teacherName">نام مدرس</span>
-              <span class="price">100,000تومان</span>
+    <section class="shoppingCart mainContent-twoParts">
+      <aside>
+        <form action="">
+          <div class="sidebarContent narrow">
+            <div class="input-layer ">
+              <button type="submit">ثبت</button>
+              <input type="text" placeholder="افزودن کد تخفیف" id="discountCode">
 
             </div>
-            <a href="" class="close"><img src="/public/Content/images/img/icons8-cancel-50.png" alt=""></a>
-          </li>
-          <li class="basket-item bg-white">
-            <a href="">دوره آموزش طراحی </a>
-            <div class="info-basket-items">
-              <span class="teacherName">نام مدرس</span>
-              <span class="price">100,000تومان</span>
-
-            </div>
-            <a href="" class="close"><img src="/public/Content/images/img/icons8-cancel-50.png" alt=""></a>
-          </li>
-          <li class="basket-item bg-white">
-            <a href="">دوره آموزش طراحی سایت</a>
-            <div class="info-basket-items">
-              <span class="teacherName">نام مدرس</span>
-              <span class="price">100,000تومان</span>
-
-            </div>
-            <a href="" class="close"><img src="/public/Content/images/img/icons8-cancel-50.png" alt=""></a>
-          </li>
-        </ul> -->
-
-
-        <section class="basket-items">
-          <ul class="heade-basket-items">
-            <li>دوره</li>
-            <li> مدرس</li>
-            <li>قیمت</li>
-
-          </ul>
-          <ul class="body-basket-items">
-            <li><a href="">طراحی سایت</a></li>
-            <li>نام مدرس</li>
-            <li>100,000 تومان</li>
-            <li><a href="" class="close">
-                <img src="/public/Content/images/img/icons8-cancel-50.png" alt="" srcset="">
-              </a></li>
-          </ul>
-          <ul class="body-basket-items">
-            <li><a href="">طراحی سایت</a></li>
-            <li>نام مدرس</li>
-            <li>100,000 تومان</li>
-            <li><a href="" class="close">
-                <img src="/public/Content/images/img/icons8-cancel-50.png" alt="" srcset="">
-              </a></li>
-          </ul>
-          <!-- <div class="modalRemove">
-    <p>دوره با موفقیت حذف شد</p>
-
-    <div class="animation-ctn">
-      <div class="icon icon--order-success svg">
-            <svg  width="19.6em" height="19.6em">  
-              <g fill="none" stroke="#22AE73" stroke-width="2"> 
-                <circle cx="77" cy="77" r="72" style="stroke-dasharray:30em, 30em; stroke-dashoffset: 60em;"></circle>
-                <circle id="colored" fill="#22AE73" cx="77" cy="77" r="72" style="stroke-dasharray:30em, 30em; stroke-dashoffset: 6.25em;"></circle>
-                <polyline class="st0" stroke="#fff" stroke-width="10" points="43.5,77.8 63.7,97.9 112.2,49.4 " style="stroke-dasharray:6.25em, 6.25em; stroke-dashoffset: 12.5em;"/>   
-              </g> 
-            </svg>
+            <span class="validation" data-messag-discountCode="کد وارد شده معتبر نمی باشد!"></span>
           </div>
-  </div>
-  
 
-  
-  </div> -->
-        </section>
+          <!-- --start/pament method -->
+          <div class="sidebarContent payment-way">
+            <p>انتخاب نحوه پرداخت</p>
+
+            <label>
+              <input type="radio" name="paymentWay" />
+              درگاه پرداخت آنلاین
+            </label>
+            <label>
+              <input type="radio" name="paymentWay" />
+              کیف پول (موجودی 100,000 تومان)
+            </label>
+          </div>
+          <!-- --end/pament method -->
+
+          <!-- --start/pament  -->
+          <div class="sidebarContent payment">
+            <div>مبلغ کل: <span><span id="totalPrice">200000 </span>تومان</span></div>
+            <div class="payment-off">تخفیف : <span id="payment-off">10000 تومان</span></div>
+
+            <hr>
+
+            <div class="payable">مبلغ قابل پرداخت : <span id="mainPrice">190000تومان</div>
+
+
+            <button type="submit" id="btn-payment" disabled>پرداخت</button>
+
+            <label for="regulations">
+              <input type="checkbox" id="regulations">
+              <a href="#">قوانین و مقررات </a>
+              را می‌پذیرم
+            </label>
+
+          </div>
+
+
+          <!-- --end/pament  -->
+        </form>
+      </aside>
+
+      <section>
+
+        <div class="basket-items grid--items">
+          <ul class="heade-basket-items head-grid--items">
+            <li>نام دوره</li>
+            <li>مدرس</li>
+            <li>قیمت</li>
+            <li>تخفیف</li>
+            <li>قیمت نهایی</li>
+            <li>تعداد</li>
+            <li></li>
+          </ul>
+
+
+          <ul class=" body-basket-items body-grid--items">
+
+            <li> <a href="" class="title-course-basket-items normal"><span class="resItem--course">دوره</span>
+                طراحی سایت
+
+              </a></li>
+            <li><span class="resItem--course">مدرس :</span>
+              <p>افشین رفوآ</p>
+            </li>
+            <li> <span class="orginalPrice-beforeOff">150000 تومان </span> <span class="resCoursePrice-final ">150000
+                تومان</span> </li>
+
+            <li class="payment-off"> <span>تخفیف : </span><span>10000 تومان</span> </li>
+
+
+            <li class="coursePrice-final coursePrice"> <span>150000 تومان</span> </li>
+
+
+            <li class="product-count">
+              <ul>
+                <li> <button class="product-count-positive">+</button></li>
+                <li> <span>0</span></li>
+                <li> <button class="product-count-negative">-</button></li>
+              </ul>
+
+            </li>
+            <li>
+              <a href="" class="delete normal">
+                <img src="/public/Content/images/img/icons8-delete-64.png" alt="" srcset="">
+              </a>
+            </li>
+          </ul>
+          <!-- --- -->
+          <ul class=" body-basket-items body-grid--items">
+
+            <li> <a href="" class="title-course-basket-items normal"><span class="resItem--course">دوره</span>
+                طراحی سایت
+
+              </a></li>
+            <li><span class="resItem--course">مدرس :</span>
+              <p>افشین رفوآ</p>
+            </li>
+            <li> <span class="orginalPrice-beforeOff">150000 تومان </span> <span class="resCoursePrice-final ">150000
+                تومان</span> </li>
+
+            <li class="payment-off"> <span>تخفیف : </span><span>10000 تومان</span> </li>
+
+
+            <li class="coursePrice-final coursePrice"> <span>150000 تومان</span> </li>
+
+
+            <li class="product-count">
+              <ul>
+                <li> <button class="product-count-positive">+</button></li>
+                <li> <span>0</span></li>
+                <li> <button class="product-count-negative">-</button></li>
+              </ul>
+
+            </li>
+            <li>
+              <a href="" class="delete normal">
+                <img src="/public/Content/images/img/icons8-delete-64.png" alt="" srcset="">
+              </a>
+            </li>
+          </ul>
+          <!-- --- -->
+          <p class="nothing"></p>
+        </div>
+
+
 
       </section>
-    </div>
-  </main>
 
+    </section>
+
+  </main>
+  <div class="modalSuccess">
+
+
+    <svg xmlns="" viewBox="-50 -50 100 100" width="20" height="20">
+      <g fill="none" stroke="currentColor" stroke-width="" stroke-linecap="round" stroke-linejoin="round">
+
+        <circle r="18" stroke-width="3" pathLength="1" />
+        <path d="M -6 5 l 5 3 8 -12" stroke-width="3" pathLength="1" />
+      </g>
+    </svg>
+    <p>دوره با موفقیت حذف شد.</p>
+
+
+  </div>
   <script src="/scripts/shoppingCart.js"></script>
   <script type="module" src="scripts/main.js"></script>
 </body>

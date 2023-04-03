@@ -141,10 +141,8 @@
 
     ul {
         li {
-            color: #000000b8;
-            a{
-                color: rgb(0 0 0 / 52%);
-            }
+            color: rgb(0 0 0 / 90%);
+         
             &:nth-child(4) {
                 color: var(--redColor);
             }
@@ -155,7 +153,7 @@
     // -------
 
     .heade-basket-items li,     .body-grid--items li a{
-        color: rgba(0, 0, 0, 0.52);
+        color: rgb(0 0 0 / 70%);
     }
     .body-grid--items {
         position: relative;

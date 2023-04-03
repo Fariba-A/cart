@@ -13,27 +13,11 @@ basketItem.forEach(function (item) {
     item.querySelector(".body-basket-items");
 
 
-    let productCountPositive = item.querySelector(".product-count-positive");
-    let productCountNegative = item.querySelector(".product-count-negative");
-    let productCount = item.querySelector(".product-count span");
 
-    productCountPositive.addEventListener("click", function () {
-        ++countP
 
-        productCount.innerText = countP;
 
-    })
-    productCountNegative.addEventListener("click", function () {
-        --countP
 
-        if (countP <= 0) {
-
-            countP = 0;
-
-        }
-        productCount.innerText = countP;
-    })
-
+ 
 
     item.querySelector(".delete").addEventListener("click", function (e) {
 

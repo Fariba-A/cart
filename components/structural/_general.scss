@@ -12,3 +12,14 @@ body {
 html {
     scroll-behavior: smooth;
 }
+  .resItem--course{
+    display: none;
+
+}   
+ @include media($screen) {
+    .resItem--course{ display:contents ;}
+       
+        ul.head-grid--items {
+            display: none;
+        }
+    }

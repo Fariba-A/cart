@@ -2,9 +2,6 @@
 @import '../components/gridItems';
 
 // --start/sideBar
-p {
-    font-size: 0.9em;
-}
 
 .validation {
     // padding: 2em;
@@ -138,12 +135,16 @@ p {
 
     input {
 
-        height: 3em;
+        height: 4em;
     }
 
 
     ul {
         li {
+            color: #000000b8;
+            a{
+                color: rgb(0 0 0 / 52%);
+            }
             &:nth-child(4) {
                 color: var(--redColor);
             }
@@ -152,6 +153,10 @@ p {
 
     // --start/basket items
     // -------
+
+    .heade-basket-items li,     .body-grid--items li a{
+        color: rgba(0, 0, 0, 0.52);
+    }
     .body-grid--items {
         position: relative;
         counter-increment: css-counter 1;
@@ -199,65 +204,65 @@ p {
 
 
 
-    .product-count {
-        width: 100%;
+    // .product-count {
+    //     width: 100%;
 
-        >ul {
-            border: 1px solid #ccc;
-            width: 100%;
-            border-radius: 30px !important;
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            grid-template-rows: 2em;
-            align-items: center;
-            padding: 0;
-            place-items: normal;
-            gap: 0;
-            overflow: hidden;
+    //     >ul {
+    //         border: 1px solid #ccc;
+    //         width: 100%;
+    //         border-radius: 30px !important;
+    //         display: grid;
+    //         grid-template-columns: 1fr 2fr 1fr;
+    //         grid-template-rows: 2em;
+    //         align-items: center;
+    //         padding: 0;
+    //         place-items: normal;
+    //         gap: 0;
+    //         overflow: hidden;
 
-            li {
-
-
-                &:nth-of-type(2) {
-                    border-left: 1px solid #ccc;
-                    border-right: 1px solid #ccc;
-                }
+    //         li {
 
 
-
-
-                button {
-                    border: none;
-                    width: 100%;
-                    height: 100%;
-                    background-color: transparent;
-                    border-radius: 0;
-                    font-size: 1.3em;
-                    transition: 0.3s;
+    //             &:nth-of-type(2) {
+    //                 border-left: 1px solid #ccc;
+    //                 border-right: 1px solid #ccc;
+    //             }
 
 
 
 
-                    &:hover {
-                        background-color: #ccc;
-                    }
-                }
-
-                span {
-
-                    margin: auto;
-                    height: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: auto;
-                }
-            }
-
-        }
+    //             button {
+    //                 border: none;
+    //                 width: 100%;
+    //                 height: 100%;
+    //                 background-color: transparent;
+    //                 border-radius: 0;
+    //                 font-size: 1.3em;
+    //                 transition: 0.3s;
 
 
-    }
+
+
+    //                 &:hover {
+    //                     background-color: #ccc;
+    //                 }
+    //             }
+
+    //             span {
+
+    //                 margin: auto;
+    //                 height: 100%;
+    //                 display: flex;
+    //                 justify-content: center;
+    //                 align-items: center;
+    //                 margin: auto;
+    //             }
+    //         }
+
+    //     }
+
+
+    // }
 
     ul {
 
@@ -286,7 +291,7 @@ p {
 
         img {
             max-width: 15em;
-
+            margin: auto;
         }
 
         p {
@@ -337,7 +342,7 @@ p {
 
     svg {
         display: block;
-        width: 15em;
+        width: 100%;
         min-height: 5em;
 
         g {
@@ -517,12 +522,13 @@ p {
     }
 
 
-    .emptyShoppingCart{
+    .emptyShoppingCart {
         font-size: 0.8em;
-       div{
-        p{
-            font-size:1em;
+
+        div {
+            p {
+                font-size: 1em;
+            }
         }
-       }
     }
 }

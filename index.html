@@ -7,7 +7,7 @@
   <title>test</title>
   <link rel="stylesheet" href="styles/app.scss">
   <link rel="stylesheet" href="/Content/fontawesome-all.min.css">
-  <link rel="stylesheet" href="/styles/shoppingCart.scss">
+  <link rel="stylesheet" href="/styles/cart.scss">
 </head>
 
 <body>
@@ -61,7 +61,7 @@
 
             <label for="regulations">
               <input type="checkbox" id="regulations">
-              <a href="#">قوانین و مقررات </a>
+              <a href="#" class="acceptRules">قوانین و مقررات </a>
               را می‌پذیرم
             </label>
 
@@ -81,7 +81,7 @@
             <li>قیمت</li>
             <li>تخفیف</li>
             <li>قیمت نهایی</li>
-            <li>تعداد</li>
+    
             <li></li>
           </ul>
 
@@ -95,23 +95,16 @@
             <li><span class="resItem--course">مدرس :</span>
               <p>افشین رفوآ</p>
             </li>
-            <li> <span class="orginalPrice-beforeOff">150000 تومان </span> <span class="resCoursePrice-final ">150000
-                تومان</span> </li>
+            <li> <del class="orginalPrice-beforeOff">150000 تومان </del> <del class="resCoursePrice-final ">150000
+                تومان</del> </li>
 
-            <li class="payment-off"> <span>تخفیف : </span><span>10000 تومان</span> </li>
+            <li class="payment-off"> <span>تخفیف : </span><i>10000 تومان</i> </li>
 
 
             <li class="coursePrice-final coursePrice"> <span>150000 تومان</span> </li>
 
 
-            <li class="product-count">
-              <ul>
-                <li> <button class="product-count-positive">+</button></li>
-                <li> <span>0</span></li>
-                <li> <button class="product-count-negative">-</button></li>
-              </ul>
-
-            </li>
+   
             <li>
               <a href="" class="delete normal">
                 <img src="/public/Content/images/img/icons8-delete-64.png" alt="" srcset="">
@@ -128,23 +121,23 @@
             <li><span class="resItem--course">مدرس :</span>
               <p>افشین رفوآ</p>
             </li>
-            <li> <span class="orginalPrice-beforeOff">150000 تومان </span> <span class="resCoursePrice-final ">150000
-                تومان</span> </li>
+            <li> <del class="orginalPrice-beforeOff">150000 تومان </del> <del class="resCoursePrice-final ">150000
+                تومان</del> </li>
 
-            <li class="payment-off"> <span>تخفیف : </span><span>10000 تومان</span> </li>
+            <li class="payment-off"> <span>تخفیف : </span><i>10000 تومان</i> </li>
 
 
             <li class="coursePrice-final coursePrice"> <span>150000 تومان</span> </li>
 
 
-            <li class="product-count">
+            <!-- <li class="product-count">
               <ul>
                 <li> <button class="product-count-positive">+</button></li>
                 <li> <span>0</span></li>
                 <li> <button class="product-count-negative">-</button></li>
               </ul>
 
-            </li>
+            </li> -->
             <li>
               <a href="" class="delete normal">
                 <img src="/public/Content/images/img/icons8-delete-64.png" alt="" srcset="">
@@ -176,7 +169,7 @@
 
 
   </div>
-  <script src="/scripts/shoppingCart.js"></script>
+  <script src="/scripts/cart.js"></script>
   <script type="module" src="scripts/main.js"></script>
 </body>
 

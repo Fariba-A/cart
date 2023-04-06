@@ -12,13 +12,6 @@ basketItem.forEach(function (item) {
     let countP = 0;
     item.querySelector(".body-basket-items");
 
-
-
-
-
-
- 
-
     item.querySelector(".delete").addEventListener("click", function (e) {
 
         e.preventDefault();
